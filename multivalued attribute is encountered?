@@ -1,0 +1,10 @@
+What two courses of action are available to a designer when a multivalued attribute is encountered?
+
+The designer can split the multivalued attributes into its components and keep these components in the same entity.
+
+Examples: 
+
+CAR color is decomposed into TOPCOLOR, TRIMCOLOR, and BODYCOLOR.
+EMPLOYEE education is decomposed into HIGHSCHOOL, TWO-YEAR COLLEGE, FOUR-YEAR COLLEGE, and POST-GRADUATE.
+
+The designer may also create a new entity composed of the multivalued attribute's components and link this new entity to the entity in which the multi-valued attributes occurred originally.  This second option is especially desirable when the number of outcomes in the multivalued attribute is, for all practical purposes, unlimited. For example, employees classified as "technical" may have certifications in many different areas and at many different levels.
