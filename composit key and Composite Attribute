@@ -1,0 +1,5 @@
+ Discuss the difference between a composite key and a composite attribute. How would each be indicated in an E-R diagram?
+
+A composite key is one that consists of more than one attribute. 
+A composite attribute is one that can be subdivided to yield attributes for each of its components. If the E-R diagram contains the attribute names for each of its entities, a composite key is indicated in the E R diagram by the fact that more than one attribute name is underlined to indicate its participation in the primary key. There is no E-R convention that enables us to indicate that an attribute is a composite attribute.
+
