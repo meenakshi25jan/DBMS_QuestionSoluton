@@ -1,0 +1,24 @@
+Given the following business rules, create the appropriate Chen and Crow’s Foot E-R diagram for each of the specified relationships:
+
+a. A company operates four departments.
+
+Although the company operates four departments now, it may later decide to combine operations or to expand them.  Clearly, the company operates at least one department.
+
+b. Each department in part (a) employs employees.
+
+To exist, a department must have at least one employee. To simplify payroll procedures, an employee is likely to be assigned to just one department. How many people must be involved in a given operation before a department can be formed? The answer to that question depends on company policy, which dictates the appropriate business rule. Thus the business rule(s) will ultimately decide the cardinalities.
+
+c. Each of the employees in part b may or may not have one or more dependents.
+
+Since an employee is not required to claim a dependent, DEPENDENT is optional to EMPLOYEE. Because a company cannot permit the existence of a dependent who is not claimed by an employee, and because we have chosen to make the DEPENDENT's primary key a combination of the EMPLOYEE's primary key and the DEPENDENT's number, DEPENDENT is a weak entity. 
+
+
+
+d. Each employee in part (c) may or may not have an employment history.
+
+Each employee may have an employment history. If a newly hired employee has no prior work experience, that employee will not have an employment history, so the EMP_HIST is optional to EMPLOYEE. Since an employee may have worked for more than one previous employer or may have worked in several other departments prior to the current assignment, there is a 1:M relationship between EMPLOYEE and EMP_HIST. Clearly, an employment history is associated with a specific employee and, because we have decided that the EMP_HIST' primary key will be a combination of the EMPLOYEE's primary key and the EMP_HIST's record number, the EMP_HIST is both a weak and optional entity. In short, the EMP_HIST dependencies and primary key may be:
+
+EMP_HIST (EMP_NUM, HIST_LINE, HIST_YEAR, HIST_DESCRIPTION, .... etc.)
+
+(We have bold-faced the primary key components.) Note again that the EMP_HIST is a weak entity because of the designer's decision to create its primary key in this fashion. 
+
