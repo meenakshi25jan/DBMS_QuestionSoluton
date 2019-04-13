@@ -1,0 +1,16 @@
+
+14. How is a composite entity represented in an E-R diagram, and what is its function? (Illustrate both the Chen and the Crow’s Foot models.)
+
+In the Chen model, a composite entity, also known as a bridge entity, is represented through a diamond contained within a box. The diamond represents a relationship, while the box represents an entity. Thus the composite entity indicates that it translates a M:N relationship into two 1:M relationships through an entity. The label "bridge entity" is based on the fact that a composite entity serves as a connection between other entities.
+
+The label "composite" is based on the fact that the composite entity contains at least the primary key attributes of each of the entities that are connected by it. The composite entity is an important component of the E-R model because relational database models should not contain M:N relationships.
+
+Example: 
+A trucking company keeps a log of its trucking operations to keep track of its driver/truck assignments.  The company may assign any given truck to any given driver many times and, as time passes, each driver may be assigned to drive many of the company's trucks:
+
+Since this M:N relationship should not be implemented, we create the composite entity named LOG whose attributes are defined by the end-user information requirements. In this case, it may be useful to include LOG_DATE, TRUCK_NUM, DRIVER_NUM, LOG_TIME_OUT, and LOG_TIME_IN. 
+
+Note that the LOG's TRUCK_NUM and DRIVER_NUM attributes are the LOG's foreign keys that provide the bridge between the TRUCK and DRIVER, respectively. In other words, the composite entity must contain at least the primary keys of the entities connected by it. Usually, this combination of foreign keys is designated to be the composite entity's primary key. However, depending on query requirements, the composite entity's primary key may be an entirely new attribute, thus producing a table containing two candidate keys: the designated primary key and the combination of foreign keys that could have served as the primary key. 
+
+Composite entities may be named to reflect their component entities.  For example, an employee may have several insurance policies (life, dental, accident, health, etc.), and each insurance policy may be held by many employees. This M:N relationship is converted to a set of two 1:M relationships, by creating a composite entity named EMP_INS. The EMP_INS entity must contain at least the primary key components of each of the two entities connected by it. How many additional attributes are kept in the composite entity depends on the end-user information requirements.
+ 
