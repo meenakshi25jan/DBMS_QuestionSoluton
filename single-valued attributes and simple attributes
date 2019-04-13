@@ -1,0 +1,14 @@
+Briefly, but precisely, explain the difference between single-valued attributes and simple attributes. Give an example of each.
+
+A single-valued attribute is one that can have only one value. For example, a person has only one first name and only one social security number. A simple attribute is one that cannot be decomposed into its component pieces. For example, a person's sex is classified as either M or F and there is no reasonable way to decompose M or F. Similarly, a person's first name cannot be decomposed into meaningful components. (In contrast, if a phone number includes the area code, it can be decomposed into the area code and the phone number itself. And a person's name may be decomposed into a first name, an initial, and a last name.)
+
+Single-valued attributes are not necessarily simple. For example, an inventory code HWPRIJ23145 may refer to a classification scheme in which HW indicates HardWare, PR indicates Printer, IJ indicates InkJet, and 23145 indicates an inventory control number. Therefore, HWPRIJ23145 may be decomposed into its component parts... even though it is single-valued. To facilitate product tracking, manufacturing serial codes must be single-valued, but they may not be simple. For instance, the product serial number TNP5S2M231109154321 might be decomposed this way:
+
+TN = state  = Tennessee
+P5 = plant number 5  
+S2 = shift 2
+M23 = machine 23
+11 = month, i.e., November
+09 = day 
+154321 = time on a 24-hour clock, i.e., 15:43:21, or 3:43 p.m. plus 21 seconds
+
