@@ -1,0 +1,13 @@
+What is a weak entity, and how is it represented in an E-R diagram? Give an example, using the Chen and Crow’s foot data models.
+
+A weak entity is one that has TWO identifying characteristics:
+
+1.	It is existence-dependent on another entity, i.e., it cannot exist without the entity with which it has a relationship.
+
+2.	It inherits at least part of their primary key from the entity to which it is related.
+
+
+
+
+The weak entity is indicated through the display of a double-lined box.
+ 
