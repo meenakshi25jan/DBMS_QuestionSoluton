@@ -1,0 +1,15 @@
+What is a derived attribute? Give an example.
+
+Database designers who concentrate on designs that display "design elegance" are very reluctant to store derived attributes in the database. Instead, they prefer that these derived attribute values are computed through appropriate algorithms when they are needed in a query. For example, a person's age may be calculated by using Julian dates to subtract the birth date from the current date and dividing the resulting number of days by 365.  In other words, the attribute EMP_AGE is computed by
+
+EMP_AGE = (EMP_DOB   DATE())/365
+
+Similarly, a sales clerk's total gross pay may be computed by adding a computed sales commission to base pay. For instance, if the sales clerk's commission is 1%, the gross pay may be computed by
+
+EMP_GROSSPAY = INV_SALES*1.01 + EMP_BASEPAY
+
+Or the invoice line item amount may be calculated by 
+
+LINE_TOTAL = LINE_UNITS*PROD_PRICE 
+
+The problem with not storing derived attributes is that large databases tend to yield very slow queries when the derived attribute values are computed during the query. For example, if you need to get line item amounts for each product sold during a pass across ten million invoice line records, you will discover that the results are slow in coming! It is much less noticeable to the end-user when the required values are computed at the time of their generation and then to store the results in the table; the same query will execute much faster in this scenario. Here is a typical example of the trade-offs that are often required in the real world. Depending on the information requirements, the number of occurrences in the queried tables, and the frequency with which various sales revenue queries are executed, it may even be useful to store line totals in the invoice line table AND to store the line totals in the invoice table! 
